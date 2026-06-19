@@ -161,7 +161,8 @@ def convert_trt():
     # Create builder
     logger = trt.Logger(trt.Logger.INFO)
     builder = trt.Builder(logger)
-    network = builder.create_network(1 << int(trt.NetworkDefinitionCreationFlag.EXPLICIT_BATCH))
+    # network = builder.create_network(1 << int(trt.NetworkDefinitionCreationFlag.EXPLICIT_BATCH))
+    network = builder.create_network(0)
     parser = trt.OnnxParser(network, logger)
 
     # Parse ONNX
@@ -175,7 +176,8 @@ def convert_trt():
     # Configure builder
     config = builder.create_builder_config()
     config.set_memory_pool_limit(trt.MemoryPoolType.WORKSPACE, 4 << 30)  # 4GB
-    config.set_flag(trt.BuilderFlag.FP16)  # Enable FP16
+    # config.set_flag(trt.BuilderFlag.FP16)  # Enable FP16
+    
 
     # Build engine
     print("Building TensorRT engine (this may take a few minutes)...")

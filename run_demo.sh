@@ -80,7 +80,7 @@ export INTERM_TIMING=0            # Intermediate layer timing
 # ============================================================
 IMAGE_PATH=./notebook/images/dancing.jpg
 DETECTOR=yolo_pose
-DETECTOR_MODEL=./checkpoints/yolo/yolo11m-pose.engine
+DETECTOR_MODEL=./checkpoints/yolo/yolo11m-pose.pt
 HAND_BOX_SOURCE=yolo_pose
 
 # ============================================================
@@ -94,9 +94,9 @@ python demo_human.py \
     --detector_model $DETECTOR_MODEL \
     --hand_box_source $HAND_BOX_SOURCE
 
-# Speed profiling / inference benchmark
-python profile_nsight.py \
-    --image_path $IMAGE_PATH \
-    --detector $DETECTOR \
-    --detector_model $DETECTOR_MODEL \
-    --hand_box_source $HAND_BOX_SOURCE
+# # Speed profiling / inference benchmark
+# python profile_nsight.py \
+#     --image_path $IMAGE_PATH \
+#     --detector $DETECTOR \
+#     --detector_model $DETECTOR_MODEL \
+#     --hand_box_source $HAND_BOX_SOURCE
