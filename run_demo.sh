@@ -78,7 +78,8 @@ export INTERM_TIMING=0            # Intermediate layer timing
 # ============================================================
 # Common Arguments
 # ============================================================
-IMAGE_PATH=./notebook/images/dancing.jpg
+# IMAGE_PATH=./notebook/images/dancing.jpg
+IMAGE_PATH=./notebook/images/1000000076.jpg
 DETECTOR=yolo_pose
 DETECTOR_MODEL=./checkpoints/yolo/yolo11m-pose.pt
 HAND_BOX_SOURCE=yolo_pose
